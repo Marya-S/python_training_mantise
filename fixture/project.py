@@ -49,6 +49,16 @@ class ProjectHelper:
         wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
         wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
 
+    def change_type(self, DataProject):
+        project_list = []
+        for item in DataProject:
+            name = item.name
+            description = item.description
+            id = item.id
+            project = Project(projectname=name, description=description, id=id)
+            project_list.append(project)
+        return project_list
+
 
 
 
